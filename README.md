@@ -6,6 +6,11 @@ Este arquivo contém a lógica central para o controle de estoque do sistema de 
 
 A metodologia adotada seria de um trabalho de maior transparência aos colaboradores envolvidos e a criação de um paínel liberal, o **Kanban** foi a metodologia escolhida pela sua facilidade e transparência necessária ao projeto.
 
+## Modelagem UML
+
+![image](https://github.com/user-attachments/assets/71833baa-b7bc-462a-865b-995603533946)
+
+
 ## Estrutura do Estoque
 
 O estoque é representado por um dicionário Python chamado `estoque_id`, onde cada chave é o nome de um produto e o valor é outro dicionário com as informações de preço e quantidade:
