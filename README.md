@@ -20,7 +20,10 @@ A metodologia adotada seria de um trabalho de maior transparência aos colaborad
 
 ## Modelagem UML
 
+### Diagrama de uso
 ![image](https://github.com/user-attachments/assets/71833baa-b7bc-462a-865b-995603533946)
+
+### Diagrama de classes
 
 
 ## Estrutura do Estoque
