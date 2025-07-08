@@ -2,6 +2,10 @@
 
 Este arquivo contém a lógica central para o controle de estoque do sistema de gestão de produtos. Ele é utilizado como módulo de backend para manipulação dos dados de estoque, sendo integrado por outros arquivos Python.
 
+## Metodoligia
+
+A metodologia adotada seria de um trabalho de maior transparência aos colaboradores envolvidos e a criação de um paínel liberal, o **Kanban** foi a metodologia escolhida pela sua facilidade e transparência necessária ao projeto.
+
 ## Estrutura do Estoque
 
 O estoque é representado por um dicionário Python chamado `estoque_id`, onde cada chave é o nome de um produto e o valor é outro dicionário com as informações de preço e quantidade:
@@ -36,7 +40,7 @@ Se o produto não existir, retorna uma mensagem de erro.
 Retorna o dicionário completo do estoque, permitindo visualizar todos os produtos cadastrados.
 
 ## Tkinter - Criação de Interface
-Para realização externa do trabalho de consulta e suas integrações, foi pensado a criação de uma Interface.
+Para realização externa do trabalho de consulta e suas integrações, foi pensado a criação de uma Interface. Visando algo mais intuitivo e de melhor utilização do usuário final, o cliente
 
 - Consulta de produtos vinculadas a uma criação de Arquivo CSV externamente do Vscode.
   ```python
