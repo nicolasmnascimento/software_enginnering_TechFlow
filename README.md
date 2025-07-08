@@ -34,3 +34,15 @@ Se o produto não existir, retorna uma mensagem de erro.
 
 ### 4. visualizar_estoque()
 Retorna o dicionário completo do estoque, permitindo visualizar todos os produtos cadastrados.
+
+## Tkinter - Criação de Interface
+Para realização externa do trabalho de consulta e suas integrações, foi pensado a criação de uma Interface.
+
+- Consulta de Ativos vinculadas a uma criação de Arquivo CSV externamente do Vscode.
+  
+- Cadastro de produtos internamente, solicitando as seguintes informações:
+  -  Produto;
+  -  Preço;
+  -  Quantidade.
+
+  
