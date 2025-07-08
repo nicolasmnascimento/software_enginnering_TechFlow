@@ -38,11 +38,104 @@ Retorna o dicionário completo do estoque, permitindo visualizar todos os produt
 ## Tkinter - Criação de Interface
 Para realização externa do trabalho de consulta e suas integrações, foi pensado a criação de uma Interface.
 
-- Consulta de Ativos vinculadas a uma criação de Arquivo CSV externamente do Vscode.
-  
+- Consulta de produtos vinculadas a uma criação de Arquivo CSV externamente do Vscode.
+  ```python
+   # Método para consultar produtos
+    def consultar_produtos(self):
+        # Converte o dicionário estoque_id em um DataFrame
+        estoque = pd.DataFrame.from_dict(estoque_id, orient="index")
+        estoque.reset_index(inplace=True)
+        estoque.rename(columns={"index": "Produto", "preco": "Preço", "quantidade": "Quantidade"}, inplace=True)
+
+        # Salva o DataFrame em um arquivo CSV
+        estoque.to_csv("estoque.csv", index=False)
+        print("Exportando base de consulta de produtos para 'estoque.csv'...")
+  ```
 - Cadastro de produtos internamente, solicitando as seguintes informações:
   -  Produto;
   -  Preço;
   -  Quantidade.
+```python
+# Método para cadastrar produto
+    def cadastrar_produto(self):
+        cadastro_tela = Toplevel(self.layout)
+        cadastro_tela.title("Cadastrar Produto")
+        cadastro_tela.geometry("300x300")
 
+        Label(cadastro_tela, text="Nome do Produto:").pack()
+        nome_produto = Entry(cadastro_tela)
+        nome_produto.pack()
+
+        Label(cadastro_tela, text="Quantidade:").pack()
+        quantidade_produto = Entry(cadastro_tela)
+        quantidade_produto.pack()
+
+        Label(cadastro_tela, text="Preço:").pack()
+        preco_produto = Entry(cadastro_tela)
+        preco_produto.pack()
+
+        def salvar_produto():
+            nome = nome_produto.get()
+            quantidade = quantidade_produto.get()
+            preco = preco_produto.get()
+
+            if not nome:
+                print("Erro: O nome do produto não pode estar vazio.")
+            elif not quantidade.isdigit():
+                print("Erro: A quantidade deve ser um número inteiro.")
+            elif not preco.replace('.', '', 1).isdigit():
+                print("Erro: O preço deve ser um número válido.")
+            else:
+                cadastrar_produto(nome, int(quantidade), float(preco))  # Chama a função do base.py
+                print(f"Produto '{nome}' cadastrado com sucesso!")
+                cadastro_tela.destroy()
+
+        Button(cadastro_tela, text="Salvar", command=salvar_produto).pack()
+```
+ 
+ A sintaxe utilizada é a mesma que foi utilizada para criação na base.py, a única coisa que se diferencia é que Tkinter e ela se complementam dentro do processo para que não haja barreiras. 
+```python
+# Método para cadastrar produto
+    def cadastrar_produto(self):
+        cadastro_tela = Toplevel(self.layout)
+        cadastro_tela.title("Cadastrar Produto")
+        cadastro_tela.geometry("300x300")
+
+        Label(cadastro_tela, text="Nome do Produto:").pack()
+        nome_produto = Entry(cadastro_tela)
+        nome_produto.pack()
+
+        Label(cadastro_tela, text="Quantidade:").pack()
+        quantidade_produto = Entry(cadastro_tela)
+        quantidade_produto.pack()
+
+        Label(cadastro_tela, text="Preço:").pack()
+        preco_produto = Entry(cadastro_tela)
+        preco_produto.pack()
+
+        def salvar_produto():
+            nome = nome_produto.get()
+            quantidade = quantidade_produto.get()
+            preco = preco_produto.get()
+
+            if not nome:
+                print("Erro: O nome do produto não pode estar vazio.")
+            elif not quantidade.isdigit():
+                print("Erro: A quantidade deve ser um número inteiro.")
+            elif not preco.replace('.', '', 1).isdigit():
+                print("Erro: O preço deve ser um número válido.")
+            else:
+                cadastrar_produto(nome, int(quantidade), float(preco))  # Chama a função do base.py
+                print(f"Produto '{nome}' cadastrado com sucesso!")
+                cadastro_tela.destroy()
+
+        Button(cadastro_tela, text="Salvar", command=salvar_produto).pack()
+
+    # Método para consultar produtos
+    def consultar_produtos(self):
+        # Converte o dicionário estoque_id em um DataFrame
+        estoque = pd.DataFrame.from_dict(estoque_id, orient="index")
+        estoque.reset_index(inplace=True)
+        estoque.rename(columns={"index": "Produto", "preco": "Preço", "quantidade": "Quantidade"}, inplace=True)
+```
   
