@@ -2,9 +2,21 @@
 
 Este arquivo contém a lógica central para o controle de estoque do sistema de gestão de produtos. Ele é utilizado como módulo de backend para manipulação dos dados de estoque, sendo integrado por outros arquivos Python.
 
-## Metodoligia
+## Metodologia
 
 A metodologia adotada seria de um trabalho de maior transparência aos colaboradores envolvidos e a criação de um paínel liberal, o **Kanban** foi a metodologia escolhida pela sua facilidade e transparência necessária ao projeto.
+
+## Requisitos
+
+### Funcionais
+- **Autenticação de usuário:** Deve permitir um login por meio de um campo de usuário e senha;
+- **Cadastro de Produtos:** Permissão de criar novos produtos dentro da base de dados do sistema;
+- **Consulta de Produtos:** Deve permitir consultas dos cadastros a partir de um arquivo externo exportado automaticamente.
+  
+### Não Funcionais
+- **Interface Gráfica:** O sistema deve ter uma interface gráfica amigável construída com a biblioteca `tkinter`;
+- **Exportação de Dados:** O sistema deve realizar a exportação de dados para análise externa;
+- **Segurança Básica:** A senha digitada deve ser mascarada `show="*"`, mesmo que a validação de senha seja simples (sem criptografia).
 
 ## Modelagem UML
 
