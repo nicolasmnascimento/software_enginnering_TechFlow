@@ -24,6 +24,7 @@ A metodologia adotada seria de um trabalho de maior transparência aos colaborad
 ![image](https://github.com/user-attachments/assets/71833baa-b7bc-462a-865b-995603533946)
 
 ### Diagrama de classes
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/247467ce-c8e8-4071-bb54-f184b5a24822" />
 
 
 ## Estrutura do Estoque
