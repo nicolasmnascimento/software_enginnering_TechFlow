@@ -163,4 +163,36 @@ Para realização externa do trabalho de consulta e suas integrações, foi pens
         estoque.reset_index(inplace=True)
         estoque.rename(columns={"index": "Produto", "preco": "Preço", "quantidade": "Quantidade"}, inplace=True)
 ```
-  
+## Validação de usuário - Login e Senha
+
+Para uma segurança mais assertiva do processo e não ceder o acesso de qualquer maneira, foi criado a validação de Login e Senha, tendo em vista a utilização de **Administrador e Usuário Comum**
+```python
+# Método que chama os dois bloqueios
+    def bloqueio(self):
+        login = self.campo_login.get()
+        senha = self.campo_senha.get()
+
+        if login == "76312" and senha == "12345":
+            self.abrir_tela_admin()
+        elif login == "13052003" and senha == "12345":
+            self.abrir_tela_usuario()
+        else:
+            print("Login ou senha incorretos.")
+
+    # Método para abrir a tela de administrador
+    def abrir_tela_admin(self):
+        admin_tela = Toplevel(self.layout)
+        admin_tela.title("Administrador")
+        admin_tela.geometry("300x200")
+        Label(admin_tela, text="Bem-vindo, Administrador!").pack()
+        Button(admin_tela, text="Cadastrar Produto", command=self.cadastrar_produto).pack()
+        Button(admin_tela, text="Consultar Produtos", command=self.consultar_produtos).pack()
+
+    # Método para abrir a tela de usuário
+    def abrir_tela_usuario(self):
+        usuario_tela = Toplevel(self.layout)
+        usuario_tela.title("Usuário Comum")
+        usuario_tela.geometry("300x200")
+        Label(usuario_tela, text="Bem-vindo, Usuário!").pack()
+        Button(usuario_tela, text="Consultar Produtos", command=self.consultar_produtos).pack()
+```
